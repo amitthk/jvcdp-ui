@@ -7,6 +7,7 @@ import { BucketSummaryComponent } from './bucket-summary/bucket-summary.componen
 import { BucketObjectsComponent } from './bucket-objects/bucket-objects.component';
 
 import { BucketManagerRoutes } from './bucketmanager-routes';
+import { AuthGuard } from '../../utility/auth.guard';
 
 @NgModule({
   imports: [
@@ -14,9 +15,10 @@ import { BucketManagerRoutes } from './bucketmanager-routes';
     FormsModule,
     HttpModule,
     RouterModule,
-        RouterModule.forChild(BucketManagerRoutes)
+    RouterModule.forChild(BucketManagerRoutes)
 
   ],
-  declarations: [BucketSummaryComponent, BucketObjectsComponent]
+  declarations: [BucketSummaryComponent, BucketObjectsComponent],
+  providers: [AuthGuard]
 })
 export class BucketManagerModule { }

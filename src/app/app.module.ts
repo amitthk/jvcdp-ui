@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MapIteratorPipe } from './utility/map-iterator.pipe';
 
 import { JvcdpService } from './services/jvcdp.service';
+import { AuthService } from './services/auth.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +41,8 @@ import { BucketManagerModule } from './modules/bucketmanager/bucketmanager.modul
     BucketManagerModule,
     UserManagerModule
   ],
-  providers: [JvcdpService],
+  providers: [JvcdpService,
+  AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
