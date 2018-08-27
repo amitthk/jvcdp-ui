@@ -20,6 +20,10 @@ export class JvcdpService implements OnInit {
 
   }
 
+  get(url:string):Observable<String>{
+    return this.http.get(url).map((response:Response)=>response.text());
+  }
+
   postS3bucketRequest(loginInfo: S3LoginModel): Observable<BucketInfoModel[]>{
     return this.http.post(this.apiUrl+'buckets', loginInfo, this.getOptions()).map((response: Response)=>response.json());
   }
